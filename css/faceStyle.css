@@ -74,7 +74,6 @@
 .front>div:nth-of-type(3)>span:nth-of-type(1) h1{
     font-size: calc(var(--font-size) * 7);
     font-weight: bold;
-    cursor: default;
     &::before{content: '<';}
     &::after{content: '/>';}
     &:hover{background-color: rgb(var(--acc)); color: rgb(var(--d100));}
