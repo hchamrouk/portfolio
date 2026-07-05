@@ -11,7 +11,7 @@
 
     --square-length: 800px;
     --padding-value: 25px;
-    
+
 }
 
 *{
@@ -36,6 +36,16 @@ body{
 
     background-color: rgb(var(--d100));
     color: rgb(var(--l100));
+}
+
+/*  */
+
+@keyframes slide {
+    from{
+        transform: translateX(var(--start));
+    }to{
+        transform: translateX(var(--end));
+    }
 }
 
 /*  */
