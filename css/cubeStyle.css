@@ -42,4 +42,8 @@
 #cube .face:nth-of-type(5){transform: translateX(var(--translate-calc)) rotateY(90deg);}
 #cube .face:nth-of-type(6){transform: translateX(var(--translate-calc)) rotateY(-90deg);}
 
+#cube{
+    transform: translateX(-50%) translateY(-50%) translateZ(calc(var(--square-length) / 2)) rotateX(90deg);
+}
+
 

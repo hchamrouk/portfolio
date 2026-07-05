@@ -11,7 +11,7 @@
 
     --square-length: 800px;
     --padding-value: 25px;
-
+    
 }
 
 *{
@@ -152,7 +152,7 @@ a{
     opacity: 0;
     pointer-events: none;
 }
-/* #intro .bg:has(input[name=choice]:checked){
+#intro .bg:has(input[name=choice]:checked){
     opacity: 0;
     pointer-events: none;
-} */
+}
