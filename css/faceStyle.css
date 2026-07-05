@@ -395,4 +395,89 @@
     align-items: center;
 } 
 
-/*  */
+/* top */
+
+
+
+.top>div:nth-of-type(1){
+    grid-area: 1 / 1 / 2 / 3;
+    /* background-color: red; */
+    border-bottom-style: none;
+}
+
+.top>div:nth-of-type(2){
+    grid-area: 2 / 1 / 6 / 6;
+    /* background-color: red; */
+} 
+.top>div:nth-of-type(2) .slider{
+    width: 100%; height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+} 
+
+.top>div:nth-of-type(2) .slider>div:nth-of-type(-n+2){
+    /* border: 2px solid rgb(var(--d200)); */
+    overflow: hidden;
+}
+.top>div:nth-of-type(2) .slider>div:nth-of-type(1){
+    grid-area: 1 / 2 / 2 / 6;
+}
+.top>div:nth-of-type(2) .slider>div:nth-of-type(2){
+    grid-area: 2 / 1 / 3 / 5;
+}
+
+.top>div:nth-of-type(2) .slider>div:nth-of-type(n+3){
+    background-color: rgb(var(--d100));
+    border: 2px solid rgb(var(--d200));
+}
+.top>div:nth-of-type(2) .slider>div:nth-of-type(3){
+    grid-area: 1 / 1 / 2 / 2;
+    border-bottom-style: none;
+} 
+.top>div:nth-of-type(2) .slider>div:nth-of-type(4){
+    grid-area: 2 / 5 / 3 / 6;
+}
+
+.top>div:nth-of-type(2) .slider .wrapper{
+    --start: 0;
+    --end: -50%;
+
+    display: flex;
+    min-width: max-content;
+    min-height: 100%;
+
+    will-change: transform;
+
+    animation: slide 10s linear infinite;
+    /* produit en crois pour une vitesse stable */
+}
+.top>div:nth-of-type(2) .slider .wrapper:hover{
+    animation-play-state: paused;
+}
+
+.top>div:nth-of-type(2) .slider .wrapper>a{
+    aspect-ratio: 1;
+    min-width: calc(((var(--square-length) - (var(--padding-value) * 2)) / 5) * 2);
+    border-right-style: none;
+}
+
+.top>div:nth-of-type(2) .slider>div:nth-of-type(1) .wrapper>a{
+    border-bottom-style: none;
+    border-left-style: none;
+    border-right-style: solid;
+}
+
+.top>div:nth-of-type(2) .slider>div:nth-of-type(2) .wrapper{
+    --start: -50%;
+    --end: 0;
+    transform: translateX(calc(-50%));
+}
+
+@keyframes slide {
+    from{
+        transform: translateX(var(--start));
+    }to{
+        transform: translateX(var(--end));
+    }
+}
