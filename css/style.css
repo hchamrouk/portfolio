@@ -23,8 +23,8 @@ html, body{
     overflow: hidden;
 }
 body{
-    min-height: var(--square-length);
-    height: 100vh;
+    /* min-height: var(--square-length); */
+    height: 100dvh;
 
     display: flex;
     justify-content: center; align-items: center;

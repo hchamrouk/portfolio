@@ -114,7 +114,7 @@ function animate() {
 
   angleY = Math.max(-90, Math.min(90, angleY));
 
-  cube.style.transform = `translateZ(calc(var(--square-length) / 2)) rotateX(${angleY}deg) rotateY(${angleX}deg)`;
+  cube.style.transform = `translateX(-50%) translateY(-50%) translateZ(calc(var(--square-length) / 2)) rotateX(${angleY}deg) rotateY(${angleX}deg)`;
 
   requestAnimationFrame(animate);
 }
