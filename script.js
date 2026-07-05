@@ -159,34 +159,3 @@ form.addEventListener("submit", (e) => {
     console.log(email);
     console.log(message);
 });
-
-const robot = document.querySelector(".robot");
-const robotWrapper = document.querySelector(".bot>div:nth-of-type(3)");
-
-const clamp = (value, min, max) => {
-  return Math.min(Math.max(value, min), max);
-};
-
-robotWrapper.addEventListener("pointermove", (e) => {
-  const rect = robot.getBoundingClientRect();
-
-  const centerX = rect.left + rect.width / 2;
-  const centerY = rect.top + rect.height / 2;
-
-  const distanceX = e.clientX - centerX;
-  const distanceY = e.clientY - centerY;
-
-  const range = 300; // distance max avant que la rotation arrête d'augmenter
-  const maxRotate = 50;
-
-  const x = clamp(distanceX / range, -1, 1);
-  const y = clamp(distanceY / range, -1, 1);
-
-  const rotateY = x * maxRotate;
-  const rotateX = -y * maxRotate;
-
-  robot.style.transform = `
-    rotateX(${rotateX}deg)
-    rotateY(${rotateY}deg)
-  `;
-});
