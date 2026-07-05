@@ -139,23 +139,3 @@ introBtn.addEventListener("click", () => {
 window.addEventListener("load", () =>{
   updateIntro();
 });
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const data = new FormData(form);
-
-    const email = data.get("email");
-    const message = data.get("message");
-
-    form.email.value = "";
-    form.message.value = "";
-    form.message.placeholder = "Merci pour votre message!";
-    setInterval(() => {
-    form.message.placeholder = "Message";
-    }, 1500);
-
-
-    console.log(email);
-    console.log(message);
-});
