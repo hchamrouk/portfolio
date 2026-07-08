@@ -94,6 +94,11 @@
     margin-block: var(--padding-value);
 } 
 
+.front .terminal div:nth-of-type(2) p:has(span.inprogress)::after{
+    content:' ...';
+    animation: loading 3s linear infinite;
+}
+
 /* back */
 
 .back>div>h1{
@@ -307,6 +312,23 @@
     border-left: 2px solid rgb(var(--d200));
 }
 
+.left>div:nth-of-type(2):has(.frontEnd #file:checked) .taskbar>div:nth-of-type(2) p::after{ 
+    content: 'front-end';
+}
+.left>div:nth-of-type(2):has(.backEnd #file:checked) .taskbar>div:nth-of-type(2) p::after{ 
+    content: 'back-end';
+}
+.left>div:nth-of-type(2):has(.dataBase #file:checked) .taskbar>div:nth-of-type(2) p::after{ 
+    content: 'database';
+}
+.left>div:nth-of-type(2):has(.tools #file:checked) .taskbar>div:nth-of-type(2) p::after{ 
+    content: 'outils';
+}
+.left>div:nth-of-type(2):has(.softSkills #file:checked) .taskbar>div:nth-of-type(2) p::after{ 
+    content: 'soft-skills';
+}
+
+
 /* right */
 
 .right{
@@ -464,6 +486,7 @@
     width: calc(((var(--square-length) - (var(--padding-value) * 2)) / 5) * 4);
     aspect-ratio: 1/2;
     border-right-style: none;
+    outline: none;
 }
 .top>div:nth-of-type(2) .slider .wrapper>a img{
     width: 100%;
@@ -472,7 +495,6 @@
 }
 .top>div:nth-of-type(2) .slider .wrapper>a img:hover{
     filter: grayscale(0);
-
 }
 
 .top>div:nth-of-type(2) .slider>div:nth-of-type(1) .wrapper>a{
