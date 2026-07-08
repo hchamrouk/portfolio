@@ -1,7 +1,6 @@
 const cube = document.getElementById("cube");
 const intro = document.querySelector("#intro .bg");
 const introBtn = document.querySelector("#intro .bg input");
-// const form = document.querySelector("form");
 
 let angleX = 0;
 let angleY = 0;
