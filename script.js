@@ -1,7 +1,7 @@
 const cube = document.getElementById("cube");
 const intro = document.querySelector("#intro .bg");
 const introBtn = document.querySelector("#intro .bg input");
-const form = document.querySelector("form");
+// const form = document.querySelector("form");
 
 let angleX = 0;
 let angleY = 0;
@@ -22,6 +22,30 @@ let isTouchDragging = false;
 let hasTouchDragged = false;
 let lastTouchX = null;
 let lastTouchY = null;
+
+function updateIntro(){
+  if (eval(localStorage.getItem("skip"))){
+    introBtn.checked = true;
+    intro.classList.add("hide");
+  } else{
+    introBtn.checked = false;
+    intro.classList.remove("hide");
+  }
+}
+
+function animate() {
+  velocityX *= friction;
+  velocityY *= friction;
+
+  angleX += velocityX;
+  angleY += velocityY;
+
+  angleY = Math.max(-90, Math.min(90, angleY));
+
+  cube.style.transform = `translateX(-50%) translateY(-50%) translateZ(calc(var(--square-length) / 2)) rotateX(${angleY}deg) rotateY(${angleX}deg)`;
+
+  requestAnimationFrame(animate);
+}
 
 document.addEventListener("contextmenu", (e) => e.preventDefault());
 
@@ -105,37 +129,16 @@ document.addEventListener("touchend", () => {
   lastTouchY = null;
 });
 
-function animate() {
-  velocityX *= friction;
-  velocityY *= friction;
-
-  angleX += velocityX;
-  angleY += velocityY;
-
-  angleY = Math.max(-90, Math.min(90, angleY));
-
-  cube.style.transform = `translateX(-50%) translateY(-50%) translateZ(calc(var(--square-length) / 2)) rotateX(${angleY}deg) rotateY(${angleX}deg)`;
-
-  requestAnimationFrame(animate);
-}
-
-animate();
-
-function updateIntro(){
-  if (eval(localStorage.getItem("skip"))){
-    introBtn.checked = true;
-    intro.classList.add("hide");
-  } else{
-    introBtn.checked = false;
-    intro.classList.remove("hide");
-  }
-}
+// intro
 
 introBtn.addEventListener("click", () => {
   localStorage.setItem("skip", introBtn.checked);
-  updateIntro();
 });
 
 window.addEventListener("load", () =>{
   updateIntro();
 });
+
+// 
+
+animate();
