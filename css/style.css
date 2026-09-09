@@ -7,9 +7,12 @@
     --l200: 160, 160, 160;
 
     --acc: 0, 255, 140;
-    --font-size: 16px;
+    --font-size: min(16px, 1vw);
 
-    --square-length: 800px;
+    --square-length: min(
+        max(100vh, 800px),
+        100vw
+    );
     --padding-value: 25px;
 
 }
