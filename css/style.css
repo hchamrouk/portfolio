@@ -7,7 +7,7 @@
     --l200: 160, 160, 160;
 
     --acc: 0, 255, 140;
-    --font-size: min(16px, 1vw);
+    --font-size: min(16px, 1.5vw);
 
     --square-length: min(
         max(100vh, 800px),
