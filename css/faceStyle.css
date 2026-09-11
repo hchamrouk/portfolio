@@ -536,7 +536,7 @@
 .bot>div:nth-of-type(3){
     grid-area: 2 / 3 / 5 / 6;
     /* background-color: red; */
-    --square-length: 220px;
+    --square-length: 25vh;
 
     display: flex;
     justify-content: center;
