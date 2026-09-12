@@ -207,7 +207,7 @@
 .left>div:nth-of-type(2) .screen .file .preview{ 
     flex: 1;
     background-color: rgb(var(--l200));
-    margin-inline: calc(var(--padding-value) * 1.5);
+    margin-inline: 30%;
     margin-block: calc(var(--padding-value) * .25);
 }
 
@@ -413,6 +413,7 @@
 .right>form textarea{
     grid-area: 4 / 1 / 6 / 7;
     border-top-style: none;
+    overflow: hidden;
 } 
 .right>form button{
     grid-area: 6 / 1 / 7 / 7;
@@ -536,7 +537,9 @@
 .bot>div:nth-of-type(3){
     grid-area: 2 / 3 / 5 / 6;
     /* background-color: red; */
-    --square-length: 220px;
+    --square-length: min(
+        25vh, 25vw
+    );
 
     display: flex;
     justify-content: center;
