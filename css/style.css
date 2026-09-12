@@ -7,14 +7,15 @@
     --l200: 160, 160, 160;
 
     --acc: 0, 255, 140;
+    
     --font-size: clamp(8px, 1.5vw, 16px);
 
     --square-length: min(
         max(800px, 100vh), 
         max(453px, 100vw)
     );
-    --padding-value: 25px;
 
+    --padding-value: 25px;
 }
 
 *{
